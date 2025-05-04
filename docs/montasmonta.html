@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="montasmo.css">
+  <title>Monta e Smonta</title>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="portfolio.html" class="nav-logo">Portfolio</a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">Chi Siamo</a>
+      <a href="#details" class="nav-link">Dettagli</a>
+      <a href="#contact" class="nav-link">Contatti</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header" id="home">
+    <div class="header-content">
+      <h1 class="header-title">Monta e Smonta</h1>
+      <p class="header-subtitle">Un progetto educativo per imparare l'hardware</p>
+    </div>
+  </header>
+
+  <!-- Monta e Smonta Section -->
+  <section class="about" id="montasmonta">
+    <h2 class="section-title animate-on-scroll">Monta e Smonta</h2>
+    <div class="about-content">
+      <div class="about-image animate-on-scroll">
+        <img src="foto.jpg" alt="Monta e Smonta">
+      </div>
+      <div class="about-text animate-on-scroll">
+        <h3>Cos'è "Monta e Smonta"?</h3>
+        <p>"Monta e Smonta" è un progetto educativo che insegna agli studenti come assemblare e disassemblare componenti hardware di un computer. L'obiettivo è fornire una comprensione pratica delle tecnologie che utilizziamo ogni giorno.</p>
+        <p>Durante il progetto, gli studenti imparano a identificare i componenti principali di un computer, come la scheda madre, il processore, la RAM e il disco rigido, e a montarli correttamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dettagli del Progetto -->
+  <section class="pcto" id="details">
+    <h2 class="section-title animate-on-scroll">Dettagli del Progetto</h2>
+    <div class="pcto-cards">
+      <div class="pcto-card animate-on-scroll">
+        <div class="pcto-card-header">
+          <img src="Immagine WhatsApp 2025-04-26 ore 13.22.53_56341ee5.jpg" alt="Componenti Hardware" class="pcto-card-img">
+          <div class="pcto-card-overlay">
+            <h3 class="pcto-card-title">Componenti Hardware</h3>
+          </div>
+        </div>
+        <div class="pcto-card-body">
+          <p class="pcto-card-desc">
+            Gli studenti esplorano i componenti hardware principali, imparando a riconoscerli e a comprenderne il funzionamento.
+          </p>
+        </div>
+      </div>
+      
+      <div class="pcto-card animate-on-scroll">
+        <div class="pcto-card-header">
+          <img src="Immagine WhatsApp 2025-04-26 ore 13.22.52_571ce3fc.jpg" alt="Assemblaggio" class="pcto-card-img">
+          <div class="pcto-card-overlay">
+            <h3 class="pcto-card-title">Assemblaggio</h3>
+          </div>
+        </div>
+        <div class="pcto-card-body">
+          <p class="pcto-card-desc">
+            Lezioni pratiche guidano gli studenti attraverso il processo di assemblaggio di un computer funzionante.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>Monta e Smonta</h3>
+        <p>Un progetto educativo per scoprire il mondo dell'hardware e sviluppare competenze pratiche.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Link Utili</h4>
+        <ul class="footer-links">
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="portfolio.html#pcto">PCTO</a></li>
+          <li><a href="portfolio.html#contact">Contatti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Borghi giovanni. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Preloader
+    window.addEventListener('load', function() {
+      const preloader = document.querySelector('.preloader');
+      preloader.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>

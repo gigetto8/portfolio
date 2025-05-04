@@ -1,0 +1,274 @@
+/* Stile generale */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  .header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    clip-path: polygon(0px 0px, 100% 0px, 100% 85%, 50% 100%, 0px 85%);
+    background: linear-gradient(-45deg, #0e6655, #0b5345, #1e8449, #145a32); /* Colori più scuri */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: white;
+    padding: 2rem;
+    overflow: hidden; /* Assicura che i puntini non escano */
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(200, 200, 200, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px; /* Distanza media tra i puntini */
+    z-index: 0; /* Posiziona i puntini dietro il contenuto */
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 1; /* Porta il contenuto sopra i puntini */
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    z-index: 1000;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    padding-right:110px;
+    display: flex;
+    gap: 1rem; /* Ridotto ulteriormente il gap */
+    flex-wrap: wrap; /* Permette di andare a capo se necessario */
+    justify-content: center; /* Centra i link */
+    max-width: 100%; /* Impedisce che escano dalla pagina */
+    overflow: hidden; /* Nasconde eventuali overflow */
+    box-sizing: border-box; /* Considera padding e bordi nel calcolo della larghezza */
+  }
+
+  .nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem; /* Ridotto il font-size */
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+    white-space: nowrap; /* Evita che i link vadano a capo */
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .header-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header-subtitle {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Sezione Monta e Smonta */
+  .about {
+    padding: 5rem 10%;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-text h3 {
+    font-size: 2rem;
+    color: #0e6655; /* Colore più scuro */
+    margin-bottom: 1rem;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  /* Sezione Dettagli del Progetto */
+  .pcto {
+    padding: 5rem 10%;
+    background-color: #f9f9f9;
+  }
+  
+  .pcto-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .pcto-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .pcto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pcto-card-header {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .pcto-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .pcto-card:hover .pcto-card-img {
+    transform: scale(1.1);
+  }
+  
+  .pcto-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+  
+  .pcto-card-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .pcto-card-body {
+    padding: 1.5rem;
+  }
+  
+  .pcto-card-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #0e6655; /* Colore più scuro */
+    color: white;
+    padding: 3rem 10%;
+    text-align: center;
+  }
+  
+  .footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #0b5345; /* Colore più scuro */
+  }
+  
+  /* Animazioni */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
